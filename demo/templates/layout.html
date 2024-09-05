@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}Django Demo App{% endblock title %}
+    </title>
+
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+    <script src="{% static "js/main.js" %}" defer></script>
+  </head>
+  <body>
+    <nav>
+      <big><a href="/admin">Admin</a> | </big>
+      <big><a href="/">Home</a> | </big>
+      <big><a href="/about">About</a> | </big>
+      <big><a href="{% url "posts" %}">Posts</a> | </big>
+      <big><a href="{% url "blogs" %}">Blogs</a></big>
+    </nav>
+
+    {% block content %}{% endblock content %}
+
+  </body>
+</html>

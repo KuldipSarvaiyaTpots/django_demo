@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Posts Page{% endblock title %}
+
+{% block content %}
+<section>
+  <h1>Hello From POSTS</h1>
+  <br />
+
+  <table>
+    {% for post in posts %}
+      <tr>
+        {% comment %} <td><a href="/posts/{{ post.id }}">View Post</a></td> {% endcomment %}
+        <td><a href="{% url "post" id=post.id %}">View Post</a></td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.content }}</td>
+        <td>{{ post.slug }}</td>
+        <td>{{ post.created_at }}</td>
+        <td>{{ post.updated_at }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+</section>
+{% endblock content %}

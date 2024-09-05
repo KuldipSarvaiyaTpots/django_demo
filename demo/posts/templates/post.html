@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Post Page - {{ post.title }}{% endblock title %}
+
+{% block content %}
+<section>
+  <h1>Hey POST</h1>
+  <br />
+
+  <h1>{{ post.id }}</h1>
+  <h1>{{ post.title }}</h1>
+  <h1>{{ post.content }}</h1>
+  <h1>{{ post.slug }}</h1>
+  <h1>{{ post.created_at }}</h1>
+  <h1>{{ post.updated_at }}</h1>
+
+</section>
+{% endblock content %}
