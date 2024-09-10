@@ -16,9 +16,10 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import showPosts, showSinglePost
+from .views import showPosts, showSinglePost, newPost
 
 urlpatterns = [
     path('', showPosts, name="posts"),
-    path('<slug:id>', showSinglePost, name="post"),
+    path('new/', newPost, name="new-post"),
+    path('<slug:id>', showSinglePost, name="single-post"),
 ]

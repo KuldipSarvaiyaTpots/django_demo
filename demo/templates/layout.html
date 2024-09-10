@@ -19,7 +19,18 @@
       <big><a href="/">Home</a> | </big>
       <big><a href="/about">About</a> | </big>
       <big><a href="{% url "posts" %}">Posts</a> | </big>
-      <big><a href="{% url "blogs" %}">Blogs</a></big>
+      <big><a href="{% url "new-post" %}">New Post</a> | </big>
+      <big><a href="{% url "blogs" %}">Blogs</a> | </big>
+      {% if not user.is_authenticated %}
+        <big><a href="{% url "users-registration" %}">Registration</a> | </big>
+        <big><a href="{% url "users-login" %}">Login</a> | </big>
+      {% endif %}
+      {% if user.is_authenticated %}
+        <form method="POST" action="{% url "users-logout" %}">
+          {% csrf_token %}
+          <button>Logout</button>
+        </form>
+      {% endif %}
     </nav>
 
     {% block content %}{% endblock content %}

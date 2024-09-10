@@ -11,7 +11,7 @@
     {% for post in posts %}
       <tr>
         {% comment %} <td><a href="/posts/{{ post.id }}">View Post</a></td> {% endcomment %}
-        <td><a href="{% url "post" id=post.id %}">View Post</a></td>
+        <td><a href="{% url "single-post" id=post.id %}">View Post</a></td>
         <td>{{ post.title }}</td>
         <td>{{ post.content }}</td>
         <td>{{ post.slug }}</td>

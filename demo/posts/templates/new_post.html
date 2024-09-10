@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}New Post Page{% endblock title %}
+
+{% block content %}
+  <section>
+    <h1>New POST</h1>
+
+    <form action="{% url "new-post" %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">create post</button>
+    </form>
+
+  </section>
+{% endblock content %}
